@@ -213,6 +213,7 @@
     left: 70px;
     z-index: 1000;
 }
+
 @media only screen and (max-width: 1200px ) and (min-width: 992px){
     *{
         text-decoration: none;
@@ -428,4 +429,29 @@
         left: 70px;
         z-index: 1000;
 }
+}
+/* ///////////////////////// Khatima*/
+.Change_Profile{
+    background-color: aqua;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.Change_Profile .Top_ChangeProfile{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    flex: 0.5;
+}
+.Change_Profile .Bottom_ChangeProfile{
+    flex: 1.5;
+    background-color: blue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
