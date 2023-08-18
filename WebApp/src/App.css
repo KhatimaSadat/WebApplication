@@ -1,0 +1,32 @@
+@font-face {
+    font-family: "Bahij Helvetica";
+    src: url("./Fonts/Bahij\ Helvetica\ Neue\ 45\ Light\(1\).ttf")
+    format("truetype") ;
+}
+/* .d-middle::-webkit-scrollbar {
+    width:4em;
+}
+.d-middle ::-webkit-scrollbar-track {
+    background-color: #dc3545;
+    background: hsl(120 70% 50% /1);
+}
+.d-middle ::-webkit-scrollbar-thumb {
+    background: hsl(120 100% 20% /1);
+    border: .25em solid  hsl(120 75% 50% /1);
+    border-radius:100vw;
+    margin-block: .5em;
+   
+}
+.d-middle ::-webkit-scrollbar-thumb :hover{
+    background: hsl(120 100% 5% /.5);
+} */
+/* @supports (scrollbar-width:2em){
+    #class-container-n {
+        background:hsl(120 100% 20% /1) hsl(120 75% 50% /1) ;
+         
+        scrollbar-width:thin;
+        scroll-behavior: smooth;
+        border-radius: 10px;
+        border: .25em solid black;
+    }
+} */
