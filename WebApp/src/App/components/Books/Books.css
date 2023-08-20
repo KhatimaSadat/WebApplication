@@ -235,7 +235,7 @@
         display: none;
     }
 }
-@media screen and (max-width: 600px)  {
+@media screen and (max-width: 736px)  {
 .full_book .MBooks .TopB .imgbm2{
     display: flex;
 }
