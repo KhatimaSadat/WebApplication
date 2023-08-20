@@ -8,7 +8,7 @@ import React, {
   useEffect,
   useState,
 } from "react";
-axios.defaults.baseURL = "http://192.168.43.29:8000/api/v1";
+axios.defaults.baseURL = "http://192.168.43.80:8000/api/v1";
 axios.defaults.timeout = 3000;
 
 // import AsyncStorage from "@react-native-async-storage/async-storage";
@@ -26,7 +26,7 @@ export const AuthProvider = ({ children }) => {
   const [currentState, setCurrentState] = useState();
   const [currentLesson, setCurrentLesson] = useState();
   const [currentpart, setCurrentpart] = useState();
-  const [backendError, setBackendError] = useState("");
+  const [backendError, setBackendError] = useState();
   const Authorization = async (status, token, errorMessage) => {
     try {
       const res = await axios

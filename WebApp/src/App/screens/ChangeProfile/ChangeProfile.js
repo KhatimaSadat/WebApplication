@@ -6,26 +6,44 @@ import "./ChangeProfile.css";
 import React, { useEffect } from "react";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import Profile from "../../assets/Group_168_@2x.png";
 <link rel="stylesheet" href="ChangeProfile.css" />;
 
 const ChangeProfile = ({ t }) => {
-  const { userInfo, isLoading } = useContext(AuthContext);
-  const initialValues = { name: "", lastname: "", age: "", senf: "" };
+  const { userInfo, isLoading, changeInfo } = useContext(AuthContext);
+  const initialValues = {
+    name: "",
+    lastname: "",
+    age: "",
+    senf: "",
+  };
   const [formValues, setFormValues] = useState(initialValues);
   const [formErrors, setFormErrors] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
+  const [displyError, setDisplyError] = useState("inline-block");
   const navigate = useNavigate();
   const handleChange = (e) => {
+    // document.getElementById("name_value").current.value = e.target.value;
+
     const { name, value } = e.target;
     setFormValues({ ...formValues, [name]: value });
   };
 
+  const handleDisplyError = () => {
+    if (displyError === "inline-block") {
+      setDisplyError("none");
+    } else if (displyError === "none") {
+      setDisplyError("inline-block");
+    }
+  };
   const handleSubmit = (e) => {
     e.preventDefault();
     setFormErrors(validate(formValues));
     setIsSubmit(true);
+    changeInfo(formValues.name);
+
     if (Object.keys(formErrors).length === 0 && isSubmit) {
-      navigate("/");
+      navigate("/header");
     }
   };
   useEffect(() => {
@@ -201,14 +219,35 @@ const ChangeProfile = ({ t }) => {
         <Link to="/header">
           <img src={ig} />
         </Link>
-        <button>{t("changeprofile1")}</button>
+        <div className="ProfHandler">
+          <img src={Profile} />
+          {/* <button>{t("changeprofile1")}</button> */}
+          <input type="image" placeholder="" />
+        </div>
       </div>
       <div className="Bottom_ChangeProfile">
         <form onSubmit={handleSubmit}>
-          <div>
-            <div>
+          <div className="form_Row">
+            <div className="input">
               <input
-                // id="input_change_profile"
+                className="ChangeProfile_input_value"
+                id="name_value"
+                // className="name_change_profile"
+                type="text"
+                name="name"
+                placeholder={t("changeprofile2")}
+                value={formValues.name}
+                onChange={handleChange}
+                onFocus={handleDisplyError}
+                onBlur={handleDisplyError}
+              />
+              <p className="error" style={{ display: `${displyError}` }}>
+                {formErrors.name}
+              </p>
+            </div>
+            <div className="input">
+              <input
+                className="ChangeProfile_input_value"
                 // className="lastname_change_profile"
                 type="text"
                 name="lastname"
@@ -216,10 +255,13 @@ const ChangeProfile = ({ t }) => {
                 value={formValues.lastname}
                 onChange={handleChange}
               />
-              <p>{formErrors.lastname}</p>
-
+              <p className="error">{formErrors.lastname}</p>
+            </div>
+          </div>
+          <div className="form_Row">
+            <div className="input">
               <input
-                // id="input_change_profile"
+                className="ChangeProfile_input_value"
                 // className="age_change_profile"
                 type="text"
                 name="age"
@@ -227,21 +269,11 @@ const ChangeProfile = ({ t }) => {
                 value={formValues.age}
                 onChange={handleChange}
               />
-              <p>{formErrors.age}</p>
+              <p className="error">{formErrors.age}</p>
             </div>
-            <div className="information_three_change_profile">
+            <div className="input">
               <input
-                // id="input_change_profile"
-                // className="name_change_profile"
-                type="text"
-                name="name"
-                placeholder={t("changeprofile2")}
-                value={formValues.name}
-                onChange={handleChange}
-              />
-              <p>{formErrors.name}</p>
-              <input
-                // id="input_change_profile"
+                className="ChangeProfile_input_value"
                 // className="senf_change_profile"
                 type="text"
                 name="senf"
@@ -249,10 +281,10 @@ const ChangeProfile = ({ t }) => {
                 value={formValues.senf}
                 onChange={handleChange}
               />
-              <p>{formErrors.senf}</p>
+              <p className="error">{formErrors.senf}</p>
             </div>
           </div>
-          <button> {t("changeprofile8")}</button>
+          <button className="submit_button"> {t("changeprofile8")}</button>
         </form>
       </div>
     </div>
