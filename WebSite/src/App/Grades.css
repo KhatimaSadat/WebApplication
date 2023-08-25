@@ -1,0 +1,268 @@
+.full-all-grade-n {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	height: 100vh;
+}
+
+.full-all-grade-n .all-grade-N {
+	display: flex;
+	flex-direction: column;
+	background-image: linear-gradient(to right, #3C98BD, #0F53A1);
+	border-bottom: #0F53A1;
+	border-bottom-right-radius: 250px;
+	height: 90vh;
+	width: 100%;
+}
+
+.full-all-grade-n .all-grade-N .flesh-image-grade-b {
+	display: flex;
+	flex-direction: column;
+	justify-content: end;
+	align-items: center;
+	width: 5%;
+}
+
+.full-all-grade-n .all-grade-N .second-section-grade {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+}
+
+.full-all-grade-n .all-grade-N .second-section-grade .grades-section {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	width: 60%;
+}
+
+.full-all-grade-n .all-grade-N .second-section-grade .grades-section .grade-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 20%;
+}
+
+.full-all-grade-n .all-grade-N .second-section-grade .grades-section .grade-container .p-two-grade-n {
+	text-align: center;
+	color: rgba(255, 255, 255, 1);
+	font-family: "Bahij Helvetica";
+	font-size: 35px;
+}
+
+.full-all-grade-n .all-grade-N .second-section-grade .grades-section .grade-container .p-one-grade-n {
+	overflow: hidden;
+	/* line-height: 79px; */
+	text-align: center;
+	font-family: "Bahij Helvetica";
+	font-style: normal;
+	font-weight: bold;
+	font-size: 35px;
+	color: rgba(255, 255, 255, 1);
+	letter-spacing: -0.4px;
+}
+
+.full-all-grade-n .all-grade-N .second-section-grade .grades-section #class-container-n {
+	height: 310px;
+	overflow-y: hidden;
+	overflow-x: hidden;
+	/* width: 100%; */
+	z-index: 200;
+	/* border-bottom:2px solid #707070; */
+}
+
+.button-grade-N {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.full-all-grade-n .all-grade-N .second-section-grade .grades-section #class-container-n .link-grade-n {
+	display: flex;
+	width: 75%;
+	/* height: 34px; */
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	background-color: rgba(212, 228, 232, 1);
+	border-radius: 30px;
+	margin: 12px;
+	padding: 1%;
+	flex: 1;
+}
+
+.full-all-grade-n .all-grade-N .second-section-grade .grades-section #class-container-n .link-grade-n .sanaf-grade-n {
+	width: 20px;
+}
+
+.full-all-grade-n .all-grade-N .second-section-grade .grades-section #class-container-n .link-grade-n .li-grade-b {
+	font-size:15px;
+	align-items: center;
+	justify-content: end;
+}
+
+.pathimg-G {
+	width: 40px;
+	margin-left: 230px;
+}
+
+.line-g {
+	display: flex;
+	width: 100%;
+}
+
+.line-g img {
+	width: 500px;
+}
+
+.icon-grade {
+	display: flex;
+	justify-content: center;
+	width: 60%;
+}
+
+.icon-grade img {
+	width: 450px;
+}
+.all-grade-Nm {
+	display: none;
+}
+
+@media screen and (max-width: 768px) {
+	.full-all-grade-n .all-grade-N {
+		display: none;
+	}
+	.full-all-grade-n {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		height: 100vh;
+	}
+
+	.all-grade-Nm {
+		display: flex;
+		flex-direction: column;
+		background-image: linear-gradient(to right, #3C98BD, #0F53A1);
+		border-bottom: #0F53A1;
+		border-bottom-right-radius: 50px;
+		border-top-left-radius: 50px;
+		width: 100%;
+		height: 90vh;
+	}
+	.full-all-grade-n .all-grade-Nm .second-section-grade {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items:end;
+		width: 100%;
+	}
+	.full-all-grade-n .all-grade-Nm .second-section-grade .grades-section {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		width:75%;
+	}
+	.full-all-grade-n .all-grade-Nm .second-section-grade .grades-section #class-container-n {
+		height:370px;
+		overflow-y: hidden;
+		overflow-x: hidden;
+		/* width: 100%; */
+		z-index: 200;
+		/* border-bottom:2px solid #707070; */
+	}
+	.full-all-grade-n .all-grade-Nm .second-section-grade .grades-section .grade-container {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		height: 20%;
+	}
+	.full-all-grade-n .all-grade-Nm .second-section-grade .grades-section .grade-container .p-two-grade-n {
+		text-align: center;
+		color: rgba(255, 255, 255, 1);
+		font-family: "Bahij Helvetica";
+		font-size: 35px;
+	}
+	
+	.full-all-grade-n .all-grade-Nm .second-section-grade .grades-section .grade-container .p-one-grade-n {
+		overflow: hidden;
+		/* line-height: 79px; */
+		text-align: center;
+		font-family: "Bahij Helvetica";
+		font-style: normal;
+		font-weight: bold;
+		font-size: 35px;
+		color: rgba(255, 255, 255, 1);
+		letter-spacing: -0.4px;
+	}
+	
+	.full-all-grade-n .all-grade-Nm .second-section-grade .grades-section #class-container-n .link-grade-n {
+		display: flex;
+		width: 75%;
+		/* height: 34px; */
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		background-color: rgba(212, 228, 232, 1);
+		border-radius: 30px;
+		margin: 12px;
+		padding: 1%;
+		flex: 1;
+	}
+	.full-all-grade-n .all-grade-Nm .second-section-grade .grades-section #class-container-n {
+		height: 310px;
+		overflow-y:scroll;
+		overflow-x: hidden;
+		/* width: 100%; */
+		z-index: 200;
+		/* border-bottom:2px solid #707070; */
+	}
+	.icon-grade {
+		display: none;
+	}
+	.full-all-grade-n .all-grade-Nm .line-g {
+		display:none;
+		width: 100%;
+	}
+	
+	/* .full-all-grade-n .all-grade-Nm .line-g img {
+		width:500px;
+	} */
+}
+@media screen and (max-width:375px){
+	.full-all-grade-n .all-grade-Nm .second-section-grade {
+		display:none;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items:end;
+		width: 100%;
+	}
+	.full-all-grade-n .all-grade-Nm .second-section-grade .grades-section {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		width:100%;
+	}
+	@media screen and (max-width:414px) {
+		.full-all-grade-n .all-grade-Nm .second-section-grade {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			align-items:end;
+			width: 100%;
+		}
+		.full-all-grade-n .all-grade-Nm .second-section-grade .grades-section {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			width:100%;
+		}
+	}
+}

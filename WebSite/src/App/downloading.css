@@ -1,0 +1,116 @@
+.full-Download {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.full-Download .d-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-image: linear-gradient(to right,  #3C98BD , #0F53A1);
+    width: 100%;
+    height:90vh;
+    flex: 1;
+}
+.full-Download .d-section  .flesh-image-grade-d {
+    display: flex;
+    flex-direction:column;
+    justify-content:end;
+    align-items:center;
+    width:15%;
+    height:15vh;
+}
+.full-Download .d-section .second-second-d {
+        display: flex;
+        flex-direction: row;
+        justify-content:center;
+        align-items: center;
+        flex: 1;
+    }
+    .full-Download .d-section .second-second-d .Dimg {
+        display: flex;
+        flex:20%;
+        height:50%;
+    }
+    .full-Download .d-section .second-second-d .Dimg img {
+        width:500px;
+    }
+    .full-Download .d-section .second-second-d .subject-section {
+        display: flex;
+        flex-direction: column;
+        justify-content:space-between;
+        align-items: center;
+        /* flex:70%; */
+        /* width: 100%; */
+       background-color: blanchedalmond;
+    }
+    .full-Download .d-section .second-second-d .p-container-d {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .full-Download .d-section .second-second-d .p-container-d .p-downloding {
+        color: white;
+        font-size:35px;
+        font-weight: bold;
+        font-family: "Bahij Helvetica";   
+    }
+    .full-Download .d-section .second-second-d .p-container-d   #p-downloding {
+        color: white;
+        font-size:40px;
+        font-family: "Bahij Helvetica"; 
+    }
+    .full-Download .d-section .second-second-d .subject-section .Download-li {
+        width:75%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        background-color:rgba(212,228,232,1);
+        align-items: center;
+        text-align: center;
+        border-radius: 32px;
+        height: 40px;
+        margin: 12px;
+        padding: 1%;
+    }
+    
+    .full-Download .d-section .second-second-d .subject-section .Download-li  #h6 {
+        font-size: 20px;
+        font-family: "Bahij Helvetica";
+        color: rgba(16, 84, 162, 1);
+    }
+    
+    .full-Download .d-section .second-second-d .subject-section .Download-li .d-book {
+        color: red;
+        width: 22px;
+    }
+    .d-middle {
+        overflow-y: scroll;
+        height: 300px;
+        width: 100%;
+    }
+    .pathimg {
+        display: none;
+        margin-left:320px;
+        margin-bottom:20px;
+        cursor: pointer;
+    }
+    .full-Download .d-section .second-second-d #line-d {
+     display: flex;
+     /* width: 100%;
+     height:40%; */
+    }
+    .full-Download .d-section .second-second-d #line-d  .line-d {
+        width:480px;
+    }
+@media screen and (max-width: 768px) {
+    .Dimg {
+        display:none;
+        flex:20%;
+        height:50%;
+    }
+    .Dimg img {
+        width:500px;
+    }
+}
