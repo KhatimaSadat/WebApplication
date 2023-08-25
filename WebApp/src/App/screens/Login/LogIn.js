@@ -2,8 +2,8 @@ import { AuthContext } from "../../context/AuthContext";
 import { useContext } from "react";
 import { Link, useNavigate, useNavigation } from "react-router-dom";
 import { withNamespaces } from "react-i18next";
-import { useGoogleLogin } from "@react-oauth/google";
-import axios from "axios";
+import {useGoogleLogin} from '@react-oauth/google';
+import axios from "axios"
 import "./LogIn.css";
 import { FaGoogle } from "react-icons/fa";
 import { useState, useEffect } from "react";
@@ -157,41 +157,41 @@ const LogIn = ({ t }, props) => {
           </div>
         </div>
         <div className="mobilee">
-          <div className="Mobile_lr">
-            <div className="M-img">
-              <div id="M-arrow">
-                <Link to="/SingUp">
-                  {" "}
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width={16}
-                    height={10}
-                    {...props}
-                    className="M-arrow"
-                  >
-                    <defs>
-                      <clipPath id="a">
-                        <path
-                          fill="#fff"
-                          d="M0 0h16v10H0z"
-                          data-name="Rectangle 85"
-                        />
-                      </clipPath>
-                    </defs>
-                    <g clipPath="url(#a)" data-name="Group 158">
+        <div className="Mobile_lr">
+          <div className="M-img">
+            <div id="M-arrow">
+              <Link to="/SingUp">
+                {" "}
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width={16}
+                  height={10}
+                  {...props}
+                  className="M-arrow"
+                >
+                  <defs>
+                    <clipPath id="a">
                       <path
                         fill="#fff"
-                        fillRule="evenodd"
-                        d="m3.247 6 2.48 2.294a.99.99 0 0 1 0 1.414 1.023 1.023 0 0 1-1.432 0L.445 6.059A1.465 1.465 0 0 1 0 5a1.483 1.483 0 0 1 .444-1.06L4.294.293a1.025 1.025 0 0 1 1.434 0 .992.992 0 0 1 0 1.414L3.248 4H15a1 1 0 0 1 0 2H3.247Z"
-                        data-name="Path 433"
+                        d="M0 0h16v10H0z"
+                        data-name="Rectangle 85"
                       />
-                    </g>
-                  </svg>
-                </Link>
-                <img src={img3} className="img3" />
-              </div>
+                    </clipPath>
+                  </defs>
+                  <g clipPath="url(#a)" data-name="Group 158">
+                    <path
+                      fill="#fff"
+                      fillRule="evenodd"
+                      d="m3.247 6 2.48 2.294a.99.99 0 0 1 0 1.414 1.023 1.023 0 0 1-1.432 0L.445 6.059A1.465 1.465 0 0 1 0 5a1.483 1.483 0 0 1 .444-1.06L4.294.293a1.025 1.025 0 0 1 1.434 0 .992.992 0 0 1 0 1.414L3.248 4H15a1 1 0 0 1 0 2H3.247Z"
+                      data-name="Path 433"
+                    />
+                  </g>
+                </svg>
+              </Link>
+              <img src={img3} className="img3" />
             </div>
           </div>
+        </div>
           <div id="Mobile-bottom">
             <button className="button_login">
               <div className="upp_login">{t("login1")}</div>
@@ -241,7 +241,7 @@ const LogIn = ({ t }, props) => {
               </form>
               <h4 className="p_login">{t("login7")} </h4>
               <Link to="google.com">
-                <button className="google_button_login" onClick={login}>
+                <button className="google_button_login" onClick={ login}>
                   <FaGoogle className="google_icon_login" />
                   <div className="google_p_login">{t("login8")}</div>
                 </button>
@@ -249,6 +249,7 @@ const LogIn = ({ t }, props) => {
             </div>
           </div>
         </div>
+  
       </div>
     );
   } else if (userInfo !== null) {
