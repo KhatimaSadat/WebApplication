@@ -1,17 +1,17 @@
 // <<<<<<< HEAD
 import { AuthContext } from "./context/AuthContext";
-import { useContext } from 'react';
+import { useContext } from "react";
 import JsonFiles from "./Json Files/SchoolSubjects.json";
-import i18n from '../i18n';
-import { withNamespaces } from 'react-i18next';
-import * as React from "react"
-import './downloading.css';
+import i18n from "../i18n";
+import { withNamespaces } from "react-i18next";
+import * as React from "react";
+import "./downloading.css";
 import { HiDownload } from "react-icons/hi";
 import { Link, useLocation } from "react-router-dom";
 import image10 from "./assets/Group_158_a@2x.png";
 import { useNavigate } from "react-router-dom";
-import { useRef } from 'react';
-import FileSaver from 'file-saver';
+import { useRef } from "react";
+import FileSaver from "file-saver";
 // import * as React from "react";
 import bookicon from "./assets/Group_360.png";
 import Dimage from "./assets/Dimage.png";
@@ -22,7 +22,7 @@ const Downloading = ({ t }, props) => {
   const { userInfo, isLoading } = useContext(AuthContext);
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
-  }
+  };
   const location = useLocation();
   const locationData = location.state;
   const subjects = locationData.subjects;
@@ -32,35 +32,29 @@ const Downloading = ({ t }, props) => {
 
   const [srollState, setScrollState] = React.useState();
   const bottom = useRef(null);
-  const top = useRef(null)
-  const [DownloadIcon , setDownloadIcon] = React.useState('flex');
-  const [spinIcon , setSpinIcon] = React.useState('none');
+  const top = useRef(null);
+  const [DownloadIcon, setDownloadIcon] = React.useState("flex");
+  const [spinIcon, setSpinIcon] = React.useState("none");
   const scrollBottom = () => {
     bottom.current.scrollIntoView({ behavier: "smooth" });
-    setScrollState("bottom")
+    setScrollState("bottom");
+  };
 
-  }
-  const path = "https://larkhoad.s3.ap-south-1.amazonaws.com/school_subjects/dari_curriculam/primary/second_grade/dari_subject/pdf_book/G2-Dr-Dari_compressed.pdf";
   const DownloadPdf = (url, fileName) => {
     // setDownloadIcon('none');
     // setSpinIcon('flex');
-    try{
+    try {
       alert(url);
       FileSaver.saveAs(url, fileName);
-      alert('DownLoading ended');
-    }
-    catch(err){
+      alert("DownLoading ended");
+    } catch (err) {
       alert(err);
     }
-
-
-  }
+  };
   const scrollTop = () => {
-
     top.current.scrollIntoView({ behavier: "smooth" });
-    setScrollState("top")
-  }
-
+    setScrollState("top");
+  };
 
   // const navigation = useNavigate();
   //   if (userInfo === null) {
@@ -71,35 +65,49 @@ const Downloading = ({ t }, props) => {
   return (
     <div className="full-Download">
       <div className="d-section">
-         <div className="flesh-image-grade-d">
-         <Link to="/Book"><img  src={image10} /></Link>
-         </div>
+        <div className="flesh-image-grade-d">
+          <Link to="/Book">
+            <img src={image10} />
+          </Link>
+        </div>
         <div className="second-second-d">
-        <div className="Dimg">
-         <img src={Dimage}  />
-         </div>
-        <div className="subject-section">
-        <div className="p-container-d">
-            <p className="p-downloding">{t("downloading1")}</p>
-            <p id="p-downloding"> {t("downloading2")}</p>
+          <div className="Dimg">
+            <img src={Dimage} />
+          </div>
+          <div className="subject-section">
+            <div className="p-container-d">
+              <p className="p-downloding">{t("downloading1")}</p>
+              <p id="p-downloding"> {t("downloading2")}</p>
             </div>
             <div className="Download-ul">
               <div className="d-middle">
                 <div ref={top}>
-                  {subjects.map((item ) => {
-                    // const subject_path = grade_path + item.subject_path + item.download_pdf;
+                  {subjects.map((item) => {
                     if (item.parts[0].lessons == undefined) {
-
                       return (
-                        // <Link
-                        //   state={{ lessons: item.parts, title: " مضمون " + item.label }}
-                        //   id="link"
-                        // >
-
                         <div className="Download-li">
-                          <div className="d-book"><HiDownload size="20px" style={{display: DownloadIcon}} onClick={() => DownloadPdf(grade_path + item.subject_path + item.download_pdf, grade_name + "_" + item.label + ".pdf")} /></div>
-                          <div className="spin" style={{display: spinIcon}}></div>
-                          <p id="h6"> {t("downloading3")} {item.label} {t("downloading4")}</p>
+                          <div className="d-book">
+                            <HiDownload
+                              size="20px"
+                              style={{ display: DownloadIcon }}
+                              onClick={() =>
+                                DownloadPdf(
+                                  grade_path +
+                                    item.subject_path +
+                                    item.download_pdf,
+                                  grade_name + "_" + item.label + ".pdf"
+                                )
+                              }
+                            />
+                          </div>
+                          <div
+                            className="spin"
+                            style={{ display: spinIcon }}
+                          ></div>
+                          <p id="h6">
+                            {" "}
+                            {t("downloading3")} {item.label} {t("downloading4")}
+                          </p>
                         </div>
                         // </Link>
                       );
@@ -109,10 +117,28 @@ const Downloading = ({ t }, props) => {
 
                         <div className="Download-li">
                           <div className="d-book">
-                            <HiDownload size="20px" style={{display: DownloadIcon}} onClick={() => DownloadPdf(grade_path + item.subject_path + item.download_pdf, grade_name + "_" + item.label + ".pdf")} />
-                            <div className="spin" style={{display: 'none'}}></div></div>
-                            
-                            <p id="h6">  {t("downloading3")} {item.label} {t("downloading4")}</p>
+                            <HiDownload
+                              size="20px"
+                              style={{ display: DownloadIcon }}
+                              onClick={() =>
+                                DownloadPdf(
+                                  grade_path +
+                                    item.subject_path +
+                                    item.download_pdf,
+                                  grade_name + "_" + item.label + ".pdf"
+                                )
+                              }
+                            />
+                            <div
+                              className="spin"
+                              style={{ display: "none" }}
+                            ></div>
+                          </div>
+
+                          <p id="h6">
+                            {" "}
+                            {t("downloading3")} {item.label} {t("downloading4")}
+                          </p>
                         </div>
                         // </Link>
                       );
@@ -120,21 +146,25 @@ const Downloading = ({ t }, props) => {
                   })}
                 </div>
                 <div id="line-d">
-              <img src={line} className="line-d" />
-            </div>
+                  <img src={line} className="line-d" />
+                </div>
               </div>
             </div>
-          
-            <img src={pathimg} className="pathimg" onClick={() => {
-              if (srollState == "bottom") {
-                scrollTop()
-              } else {
-                scrollBottom()
-              }
-            }} />
+
+            <img
+              src={pathimg}
+              className="pathimg"
+              onClick={() => {
+                if (srollState == "bottom") {
+                  scrollTop();
+                } else {
+                  scrollBottom();
+                }
+              }}
+            />
+          </div>
         </div>
-        </div>
-            {/* <div className="Dimage-m">
+        {/* <div className="Dimage-m">
               <svg id="Dimage-m"
                 xmlns="http://www.w3.org/2000/svg"
                 width={262.643}
@@ -1228,16 +1258,11 @@ const Downloading = ({ t }, props) => {
                 </g>
               </svg>
             </div> */}
-         
-
-       
       </div>
-
-
     </div>
   );
   // }
-}
+};
 
 export default withNamespaces()(Downloading);
 // =======
@@ -1291,14 +1316,12 @@ export default withNamespaces()(Downloading);
 //   //  aTag.remove();
 //  FileSaver.saveAs(url , fileName );
 
-
 //   }
 //   const scrollTop = ()=>{
-    
+
 //     top.current.scrollIntoView({behavier: "smooth"});
 //     setScrollState("top")
 //    }
-
 
 //              // const navigation = useNavigate();
 // //   if (userInfo === null) {
@@ -1306,15 +1329,15 @@ export default withNamespaces()(Downloading);
 // //   } else if (isLoading) {
 // //     return <h1>Loading.....</h1>;
 // //   } else if(userInfo !== null){
-//     return ( 
-//         <div> 
+//     return (
+//         <div>
 //       <div  className="d-section">
-//       <div className="download-b"> 
-//       <Link to="/Book"><img className="flesh-image-grade-d" src={image10} /></Link>  
+//       <div className="download-b">
+//       <Link to="/Book"><img className="flesh-image-grade-d" src={image10} /></Link>
 //        <div>
 //        <p className="p-downloding">{t("downloading1")}</p>
 //           <p id="p-downloding"> {t("downloading2")}</p>
-        
+
 //           <div className="Download-ul">
 //             <img src={Dimage}  className="Dimg"/>
 //          <div className="d-middle">
@@ -1328,7 +1351,7 @@ export default withNamespaces()(Downloading);
 //                 //   state={{ lessons: item.parts, title: " مضمون " + item.label }}
 //                 //   id="link"
 //                 // >
-                  
+
 //                   <div className="Download-li">
 //                     <div className="d-book"><HiDownload size="20px" onClick={()=> DownloadPdf(grade_path + item.subject_path + item.download_pdf , grade_name + "_"+ item.label + ".pdf")}/></div>
 //                     <p id="h5"> {t("downloading3")} {item.label} {t("downloading4")}</p>
@@ -2455,15 +2478,14 @@ export default withNamespaces()(Downloading);
 //   </svg>
 //          </div>
 //        </div>
-       
+
 //         </div>
 //       </div>
-      
-      
+
 //         </div>
 //      );
 //   // }
 // }
- 
+
 // export default  withNamespaces()(Downloading) ;
 // >>>>>>> 5f09275ac9cef549fb77e7d5f1b9e746ab157533
