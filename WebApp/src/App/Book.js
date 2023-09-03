@@ -59,7 +59,7 @@ const Book = ({ t }) => {
       <div className="Bookheader">
         <div id="flesh-image-grade-B">
           <Link to="/Header">
-            <img className="flesh-image-grade-B" src={image5} />
+            <img src={image5} />
           </Link>
         </div>
         <div className="second-section">
@@ -68,10 +68,6 @@ const Book = ({ t }) => {
           </div>
           <div className="buttom-books">
             <div className="p-container-books">
-              {/* <p className='p-books'> کتاب های مورد نظر صنف خود را</p>
-         <p id='p-books'>از اینجا انتخاب  کنید</p> */}
-              {/* <p className='p-books'>{t("book1")}</p> */}
-
               <p className="p-books">{t("book1")}</p>
               <p id="p-books"> {t("book4")}</p>
             </div>
@@ -151,10 +147,6 @@ const Book = ({ t }) => {
                   );
                 })}
               </div>
-            </div>
-
-            <div id="line">
-              <img src={line} className="line" />
             </div>
             <div id="line">
               <img

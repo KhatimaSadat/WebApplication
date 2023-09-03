@@ -260,6 +260,14 @@
         
     }
 }
+@media screen and (min-height: 650pX){
+.full-signUP #all_singup .Sign_up_form{
+    height: 70%;
+}
+.full-signUP #all_singup #Group_singup{
+    height: 70%;
+}
+}
 @media screen and (max-width: 1024px) {
     .full-signUP #all_singup #Group_singup #imgg_singup {
         width: 70%;

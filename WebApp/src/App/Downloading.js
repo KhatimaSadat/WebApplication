@@ -41,15 +41,23 @@ const Downloading = ({ t }, props) => {
   };
 
   const DownloadPdf = (url, fileName) => {
-    // setDownloadIcon('none');
+    const aTag = document.createElement("a");
+    aTag.href = url;
+    aTag.setAttribute("download", fileName);
+    document.body.appendChild(aTag);
+    aTag.target = "bank";
+    aTag.click();
+    aTag.remove();
+    // setDownloadIcon('none');;
+
     // setSpinIcon('flex');
-    try {
-      alert(url);
-      FileSaver.saveAs(url, fileName);
-      alert("DownLoading ended");
-    } catch (err) {
-      alert(err);
-    }
+    // try {
+    //   alert(url);
+    //   FileSaver.saveAs(url, fileName);
+    //   alert("DownLoading ended");
+    // } catch (err) {
+    //   alert(err);
+    // }
   };
   const scrollTop = () => {
     top.current.scrollIntoView({ behavier: "smooth" });
@@ -69,87 +77,91 @@ const Downloading = ({ t }, props) => {
           <Link to="/Book">
             <img src={image10} />
           </Link>
+        </div>
+        <div className="bottom_D">
           <div className="Dimg">
             <img src={Dimage} />
           </div>
-        </div>
-        <div className="second-second-d">
-          <div className="p-container-d">
-            <p className="p-downloding">{t("downloading1")}</p>
-            <p id="p-downloding"> {t("downloading2")}</p>
-          </div>
-          <div className="Download-ul">
-            <div className="d-middle">
-              <div ref={top} className="inside_ul">
-                {subjects.map((item, index) => {
-                  if (item.parts[0].lessons == undefined) {
-                    return (
-                      <div className="Download-li">
-                        <div className="d-book">
-                          <HiDownload
-                            size="20px"
-                            style={{ display: DownloadIcon }}
-                            onClick={() =>
-                              DownloadPdf(
-                                grade_path +
-                                  item.subject_path +
-                                  item.download_pdf,
-                                grade_name + "_" + item.label + ".pdf"
-                              )
-                            }
-                          />
-                        </div>
-                        <p id="h6">
-                          {t("downloading3")} {item.label}
-                          {t("downloading4")}
-                        </p>
-                      </div>
-                    );
-                  } else {
-                    return (
-                      <div className="Download-li">
-                        <div className="d-book">
-                          <HiDownload
-                            size="20px"
-                            style={{ display: DownloadIcon }}
-                            onClick={() =>
-                              DownloadPdf(
-                                grade_path +
-                                  item.subject_path +
-                                  item.download_pdf,
-                                grade_name + "_" + item.label + ".pdf"
-                              )
-                            }
-                          />
-                          <div
-                            className="spin"
-                            style={{ display: "none" }}
-                          ></div>
-                        </div>
+          <div className="BookD_list">
+            <div className="second-second-d">
+              <div className="p-container-d">
+                <p className="p-downloding">{t("downloading1")}</p>
+                <p id="p-downloding"> {t("downloading2")}</p>
+              </div>
+              <div className="Download-ul">
+                <div className="d-middle">
+                  <div ref={top} className="inside_ul">
+                    {subjects.map((item, index) => {
+                      if (item.parts[0].lessons == undefined) {
+                        return (
+                          <div className="Download-li">
+                            <div className="d-book">
+                              <HiDownload
+                                size="20px"
+                                style={{ display: DownloadIcon }}
+                                onClick={() =>
+                                  DownloadPdf(
+                                    grade_path +
+                                      item.subject_path +
+                                      item.download_pdf,
+                                    grade_name + "_" + item.label + ".pdf"
+                                  )
+                                }
+                              />
+                            </div>
+                            <p id="h6">
+                              {t("downloading3")} {item.label}
+                              {t("downloading4")}
+                            </p>
+                          </div>
+                        );
+                      } else {
+                        return (
+                          <div className="Download-li">
+                            <div className="d-book">
+                              <HiDownload
+                                size="20px"
+                                style={{ display: DownloadIcon }}
+                                onClick={() =>
+                                  DownloadPdf(
+                                    grade_path +
+                                      item.subject_path +
+                                      item.download_pdf,
+                                    grade_name + "_" + item.label + ".pdf"
+                                  )
+                                }
+                              />
+                              <div
+                                className="spin"
+                                style={{ display: "none" }}
+                              ></div>
+                            </div>
 
-                        <p id="h6">
-                          {t("downloading3")} {item.label}
-                          {t("downloading4")}
-                        </p>
-                      </div>
-                      // </Link>
-                    );
-                  }
-                })}
+                            <p id="h6">
+                              {t("downloading3")} {item.label}
+                              {t("downloading4")}
+                            </p>
+                          </div>
+                          // </Link>
+                        );
+                      }
+                    })}
+                  </div>
+                </div>
+              </div>
+              <div className="pathimg">
+                <img
+                  src={pathimg}
+                  onClick={() => {
+                    if (srollState == "bottom") {
+                      scrollTop();
+                    } else {
+                      scrollBottom();
+                    }
+                  }}
+                />
               </div>
             </div>
-          </div>
-          <div className="pathimg">
-            <img
-              src={pathimg}
-              onClick={() => {
-                if (srollState == "bottom") {
-                  scrollTop();
-                } else {
-                  scrollBottom();
-                }
-              }}
-            />
           </div>
         </div>
       </div>
