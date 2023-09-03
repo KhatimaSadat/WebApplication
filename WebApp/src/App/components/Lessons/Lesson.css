@@ -350,7 +350,8 @@ cursor: pointer;
     align-items: center;
     height: 5%;
     width: 85%;
-    border: 2px solid green;
+    color: #707070;
+    
 }
 .Lesson_body .mobile .mobile-bottom img{
     height: 100%;
