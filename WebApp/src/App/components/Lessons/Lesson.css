@@ -471,4 +471,17 @@ margin-bottom: 2%;
     height: 432px;
 }
 }
-
+@media screen and (max-height: 435px) {
+.Lesson_body .mobile{
+    height: 435px;
+}
+}
+@media screen and (max-height: 360px){
+.Lesson_body .mobile .mobileTop .mobile-background {
+        margin-top: -98px;
+    }
+.Lesson_body .mobile .mobileTop .mobile-background .imgTop{
+    height: 40px;
+    width: 40px;
+}
+}
