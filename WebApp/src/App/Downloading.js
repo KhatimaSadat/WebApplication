@@ -80,7 +80,7 @@ const Downloading = ({ t }, props) => {
         </div>
         <div className="bottom_D">
           <div className="Dimg">
-            <img src={Dimage} />
+            <img src={Dimage} className="Dimg_img" />
           </div>
           <div className="BookD_list">
             <div className="second-second-d">
@@ -88,9 +88,10 @@ const Downloading = ({ t }, props) => {
                 <p className="p-downloding">{t("downloading1")}</p>
                 <p id="p-downloding"> {t("downloading2")}</p>
               </div>
-              <div className="Download-ul">
-                <div className="d-middle">
-                  <div ref={top} className="inside_ul">
+              <div className="Download-ul" id="Download-ul">
+                <div className="d-middle" id="d-middle">
+                  <div id="D_Top" ref={top}></div>
+                  <div className="inside_ul" id="inside_ul">
                     {subjects.map((item, index) => {
                       if (item.parts[0].lessons == undefined) {
                         return (
@@ -147,12 +148,15 @@ const Downloading = ({ t }, props) => {
                       }
                     })}
                   </div>
+                  <div id="D_Bottom" ref={bottom}></div>
                 </div>
               </div>
               <div className="pathimg">
                 <img
                   src={pathimg}
                   onClick={() => {
+                    // const slider = document.getElementById("d-middle");
+                    // return slider.scrollBy(0, 40);
                     if (srollState == "bottom") {
                       scrollTop();
                     } else {

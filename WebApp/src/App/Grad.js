@@ -46,11 +46,11 @@ const Grads = ({ t }) => {
   const bottom = useRef(null);
   const top = useRef(null);
   const scrollBottom = () => {
-    bottom.current.scrollIntoView({ behavier: "smooth" });
+    top.current.scrollIntoView({ behavier: "smooth" });
     setScrollState("bottom");
   };
   const scrollTop = () => {
-    top.current.scrollIntoView({ behavier: "smooth" });
+    bottom.current.scrollIntoView({ behavier: "smooth" });
     setScrollState("top");
   };
 
@@ -75,86 +75,81 @@ const Grads = ({ t }) => {
               <span className="p-two-grade-n">{t("grad2")}</span>
             </div>
             <div id="class-container-n">
-              <div className="button-grade-N" ref={top}>
-                {primary.map((item) => {
-                  return (
-                    <Link
-                      className="link-grade-n"
-                      to="/books"
-                      state={{ subjects: item.subjects }}
-                    >
-                      <div className="sanaf-grade-n">
-                        {" "}
-                        <img src={sanaf} />
-                      </div>
-                      <div
-                        className="li-grade-b"
-                        onClick={() => setCurrentState(item.label)}
+              <div className="all_grade_wrapper_h">
+                <div className="button-grade-N" ref={top}>
+                  {primary.map((item) => {
+                    return (
+                      <Link
+                        className="link-grade-n"
+                        to="/books"
+                        state={{ subjects: item.subjects }}
                       >
-                        {item.label}
-                      </div>
-                    </Link>
-                  );
-                })}
-              </div>
-              <div className="button-grade-N" ref={bottom}>
-                {secondary.map((item) => {
-                  return (
-                    <Link
-                      className="link-grade-n"
-                      to="/books"
-                      state={{ subjects: item.subjects }}
-                    >
-                      <div className="sanaf-grade-n">
-                        {" "}
-                        <img src={sanaf} />
-                      </div>
-                      <div
-                        className="li-grade-b"
-                        onClick={() => setCurrentState(item.label)}
+                        <div className="sanaf-grade-n">
+                          {" "}
+                          <img src={sanaf} />
+                        </div>
+                        <div
+                          className="li-grade-b"
+                          onClick={() => setCurrentState(item.label)}
+                        >
+                          {item.label}
+                        </div>
+                      </Link>
+                    );
+                  })}
+                </div>
+                <div className="button-grade-N" ref={bottom}>
+                  {secondary.map((item) => {
+                    return (
+                      <Link
+                        className="link-grade-n"
+                        to="/books"
+                        state={{ subjects: item.subjects }}
                       >
-                        {item.label}
-                      </div>
-                    </Link>
-                  );
-                })}
-              </div>
-              <div className="button-grade-N">
-                {high_school.map((item) => {
-                  return (
-                    <Link
-                      className="link-grade-n"
-                      to="/books"
-                      state={{ subjects: item.subjects }}
-                    >
-                      <div className="sanaf-grade-n">
-                        {" "}
-                        <img src={sanaf} />
-                      </div>
-                      <div
-                        className="li-grade-b"
-                        onClick={() => setCurrentState(item.label)}
+                        <div className="sanaf-grade-n">
+                          {" "}
+                          <img src={sanaf} />
+                        </div>
+                        <div
+                          className="li-grade-b"
+                          onClick={() => setCurrentState(item.label)}
+                        >
+                          {item.label}
+                        </div>
+                      </Link>
+                    );
+                  })}
+                </div>
+                <div className="button-grade-N">
+                  {high_school.map((item) => {
+                    return (
+                      <Link
+                        className="link-grade-n"
+                        to="/books"
+                        state={{ subjects: item.subjects }}
                       >
-                        {item.label}
-                      </div>
-                    </Link>
-                  );
-                })}
+                        <div className="sanaf-grade-n">
+                          {" "}
+                          <img src={sanaf} />
+                        </div>
+                        <div
+                          className="li-grade-b"
+                          onClick={() => setCurrentState(item.label)}
+                        >
+                          {item.label}
+                        </div>
+                      </Link>
+                    );
+                  })}
+                </div>
               </div>
             </div>
-            <div className="line-g">
-              <img src={line} />
-            </div>
-            <div>
+            <div className="pathimg-G-wrapper">
               <img
                 src={pathimg}
                 className="pathimg-G"
                 onClick={() => {
-                  if (scrollState == "bottom") {
-                    scrollTop();
-                  } else {
-                    scrollBottom();
-                  }
+                  scrollState == "bottom" ? scrollTop() : scrollBottom();
                 }}
               />
             </div>
