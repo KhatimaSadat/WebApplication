@@ -155,8 +155,6 @@ const Downloading = ({ t }, props) => {
                 <img
                   src={pathimg}
                   onClick={() => {
-                    // const slider = document.getElementById("d-middle");
-                    // return slider.scrollBy(0, 40);
                     if (srollState == "bottom") {
                       scrollTop();
                     } else {

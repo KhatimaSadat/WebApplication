@@ -196,11 +196,12 @@ display: flex;
     justify-content: center;
     align-items: center;
     width: 70%;
-    height: 70%;
+    height: 50%;
+    margin-top: 20%;
 }
 .full-Download .d-section .bottom_D .BookD_list .second-second-d .p-container-d .p-downloding {
     color: white;
-    font-size: 15px;
+    font-size: 20px;
     font-weight: bold;
     font-family: "Bahij Helvetica";
     text-align: center;
@@ -208,9 +209,10 @@ display: flex;
 
 .full-Download .d-section .bottom_D .BookD_list .second-second-d .p-container-d #p-downloding {
     color: white;
-    font-size: 15px;
+    font-size: 20px;
     font-family: "Bahij Helvetica";
     text-align: center;
+    font-weight: bold;
 }
 }
 @media screen and (max-height: 610px){
