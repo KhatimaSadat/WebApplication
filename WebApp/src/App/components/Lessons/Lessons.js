@@ -117,8 +117,14 @@ const Lessons = ({ t }, props) => {
             </div>
           </div>
           <div className="midlle">
-            <img src={photo3}></img>
-            <p> {t("lessons3")}</p>
+            <div className="pdf-Download-ls">
+              <img src={photo3}></img>
+              <p> {t("lessons3")}</p>
+            </div>
+            <div className="next-back-ls">
+              <button className="next-ls">next</button>
+              <button className="back-ls">back</button>
+            </div>
           </div>
         </div>
       </div>
@@ -148,9 +154,15 @@ const Lessons = ({ t }, props) => {
           </div>
         </div>
         <div className="mobile-bottom">
-          <img src={Down1} />
-          <button />
-          <p>دانلود فایل پی دی اف</p>
+          <div className="pdf-Download-ls">
+            <img src={Down1} />
+            <button />
+            <p className="mobile-bottom-p">دانلود فایل پی دی اف</p>
+          </div>
+          <div className="next-back-ls">
+            <button className="next-ls">next</button>
+            <button className="back-ls">back</button>
+          </div>
         </div>
         <div
           className="menu_bar"

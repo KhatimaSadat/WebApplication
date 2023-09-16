@@ -8,6 +8,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Profile from "../../assets/Group_168_@2x.png";
 import TelegramIcon from "../../assets/Group 413.png";
+import MobileBackGroundCP from "../../assets/ChangeProMobile.png";
 <link rel="stylesheet" href="ChangeProfile.css" />;
 
 const ChangeProfile = ({ t }) => {
@@ -109,6 +110,7 @@ const ChangeProfile = ({ t }) => {
         </div>
       </div>
       <div className="Bottom_ChangeProfile">
+        <img src={MobileBackGroundCP} className="CP_M_BackGround" />
         <form onSubmit={handleSubmit}>
           <div className="form_Row">
             <div className="input">
