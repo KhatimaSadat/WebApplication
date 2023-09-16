@@ -14,9 +14,6 @@
     background-image: linear-gradient(to right,  #3C98BD , #0F53A1);
     width: 100%;
     height:90%;
-    /* flex: 1; */
-    /* margin-bottom: 10%; */
-    /* flex: 1; */
 }
 .full-Download .d-section  .flesh-image-grade-d {
     display: flex;
@@ -24,7 +21,7 @@
     justify-content:end;
     align-items:end;
     width:90%;
-    flex:10%;
+    height:10%;
 }
 .full-Download .d-section .flesh-image-grade-d a{
     width: 100%;
@@ -40,7 +37,7 @@
     justify-content: space-between;
     align-items: center;
     width: 90%;
-    flex: 90%;
+    height: 90%;
 }
 .full-Download .d-section .bottom_D .Dimg{
  height: 100%;
@@ -69,14 +66,14 @@
         justify-content:center;
         align-items: center;
         width: 100%;
-        height: 500px;
+        height: 100%;
 }
 .full-Download .d-section .bottom_D .BookD_list .second-second-d .p-container-d{
 display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex: 16%;
+    height: 16%;
     color: white;
     margin-bottom: 2%;
     
@@ -95,7 +92,7 @@ display: flex;
     text-align: center;
 }
 .full-Download .d-section .bottom_D .BookD_list  .second-second-d .Download-ul{
-    height: 80%;
+    height: 70%;
     display: flex;
         flex-direction: column;
         justify-content: center;
@@ -140,21 +137,28 @@ display: flex;
     background-color: red;
 }
 .full-Download .d-section .bottom_D .BookD_list .second-second-d .pathimg{
-    flex: 10%;
+    height: 20%;
     display: flex;
     flex-direction: column;
     justify-content: start;
     align-items: center;
     padding-top: 5px;
-    padding-bottom: 1%;
     border-top: 2px solid white;
     width: 100%;
 }
+@media screen and ( max-height: 610px) and (min-width: 701px) {
+/* .full-Download {
+        height: 610px;
+    } */
+        /* .full-Download .d-section .bottom_D .BookD_list{
+            height: 70%;
+        } */
+}
 @media screen and (min-height: 650px) and (min-width: 701px) {
+    
     .full-Download .d-section .bottom_D .Dimg {
-        height: 500px;
-        /* background-color: rebeccapurple; */
-        width: 100%;
+        /* height: 500px;
+        width: 100%; */
     }
     
 }
@@ -162,6 +166,10 @@ display: flex;
     .full-Download .d-section .bottom_D .BookD_list .second-second-d .Download-ul .d-middle .inside_ul .Download-li{
         height: 25px;
     }
+        .full-Download .d-section .flesh-image-grade-d a img{
+          height: 10px; 
+          width: 20px; 
+        }
 .full-Download .d-section {
         height: 95%;
         /* flex: 1; */
@@ -201,10 +209,10 @@ display: flex;
     /* margin-bottom: 5%; */
 }
 .full-Download .d-section .bottom_D .BookD_list .second-second-d .Download-ul{
-    height: 50%;
+    height: 90%;
 }
 .full-Download .d-section .bottom_D .BookD_list .second-second-d .p-container-d{
-    flex: 8%;
+    height: 8%;
     margin-bottom: 0%;
     justify-content: end;
     width: 100%;
@@ -280,7 +288,7 @@ display: flex;
             text-align: center;
         }
 }
-@media screen and (max-height: 610px){
+@media screen and (max-height: 610px) and (max-width: 700px){
 .full-Download .d-section .bottom_D .Dimg{
       height: 40%;  
     }
@@ -323,34 +331,32 @@ display: flex;
     height: 50%;
 }
 }
-/* @media screen and (max-width: 700px) and (max-height: 649px) {
-    .full-Download .d-section .bottom_D .Dimg {
-        display: none;
+@media screen and (min-width: 701px) and (max-height: 363px) {
+    .full-Download .d-section .flesh-image-grade-d a img {
+     height: 10px;
+     width: 20px;
     }
-   .full-Download .d-section .flesh-image-grade-d a img{
-    width: 20px;
-    height: 15px;
-   }
-    .full-Download .d-section .bottom_D .BookD_list {
-        width: 100%;
+    .full-Download .d-section .bottom_D .BookD_list .second-second-d .Download-ul{
+        height: 50%;
     }
-
-    .full-Download .d-section .second-second-d .p-container-d .p-downloding {
-        font-size: 18px;
-    }
-
-    .full-Download .d-section .second-second-d .p-container-d #p-downloding {
-        font-size: 18px;
-    }
-
-    .full-Download .d-section .second-second-d .Download-ul .d-middle .inside_ul .Download-li #h6 {
-        font-size: 80%;
-        padding-right: 5px;
-    }
-    .full-Download .d-section .bottom_D .second-second-d .pathimg img{
-        width: 20px;
-        height: 10px;
-    }
-
-} */
-   
+        .full-Download .d-section .bottom_D .BookD_list .second-second-d .p-container-d .p-downloding {
+            color: white;
+            font-size: 15px;
+            font-weight: bold;
+            font-family: "Bahij Helvetica";
+            text-align: center;
+        }
+    
+        .full-Download .d-section .bottom_D .BookD_list .second-second-d .p-container-d #p-downloding {
+            color: white;
+            font-size: 15px;
+            font-family: "Bahij Helvetica";
+            text-align: center;
+            font-weight: bold;
+        }
+}
+@media screen and (max-width: 700px) and (max-height: 363px){
+.full-Download{
+    height: 363px;
+}
+}
