@@ -1,3 +1,6 @@
+*{
+font-family: "Bahij Helvetica";
+}
 .full-Download {
     display: flex;
     flex-direction: column;
