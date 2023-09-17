@@ -551,6 +551,10 @@ margin-bottom: 2%;
 .Lesson_body .mobile .mobile-bottom .pdf-Download-ls .mobile-bottom-p{
 font-size: 12px;
 }
+.Lesson_body .mobile .mobile-bottom .next-back-ls .next-ls,
+.Lesson_body .mobile .mobile-bottom .next-back-ls .back-ls {
+    width: 40%;
+}
 }
 @media screen and (max-width: 330px) {
     .Lesson_body .mobile .mobile-bottom .pdf-Download-ls .mobile-bottom-p {

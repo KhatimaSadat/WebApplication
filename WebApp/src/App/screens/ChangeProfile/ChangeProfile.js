@@ -126,7 +126,10 @@ const ChangeProfile = ({ t }) => {
                 onFocus={handleDisplyError}
                 onBlur={handleDisplyError}
               />
-              <p className="error" style={{ display: `${displyError}` }}>
+              <p
+                className="error_change_profile"
+                style={{ display: `${displyError}` }}
+              >
                 {formErrors.name}
               </p>
             </div>
@@ -140,7 +143,7 @@ const ChangeProfile = ({ t }) => {
                 value={formValues.lastname}
                 onChange={handleChange}
               />
-              <p className="error">{formErrors.lastname}</p>
+              <p className="error_change_profile">{formErrors.lastname}</p>
             </div>
           </div>
           <div className="form_Row">
@@ -154,7 +157,7 @@ const ChangeProfile = ({ t }) => {
                 value={formValues.age}
                 onChange={handleChange}
               />
-              <p className="error">{formErrors.age}</p>
+              <p className="error_change_profile">{formErrors.age}</p>
             </div>
             <div className="input">
               <input
@@ -166,7 +169,7 @@ const ChangeProfile = ({ t }) => {
                 value={formValues.senf}
                 onChange={handleChange}
               />
-              <p className="error">{formErrors.senf}</p>
+              <p className="error_change_profile">{formErrors.senf}</p>
             </div>
           </div>
           <button className="submit_button"> {t("changeprofile8")}</button>
