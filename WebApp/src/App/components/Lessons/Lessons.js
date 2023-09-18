@@ -37,14 +37,14 @@ const Lessons = ({ t }, props) => {
     aTag.click();
     aTag.remove();
   };
+  const [pageNum, setPageNum] = useState(0);
   const subject_path = locationData.subject_path;
   const [lesson_path, setLessonPath] = useState(
-    subject_path + lessons[0].paths[0]
+    subject_path + lessons[0].paths[pageNum]
   );
-
-  // console.log(subject_path + lesson_path[0]);
-  // console.log(subject_path + lesson_path[1]);
-
+  const handelPage = () => {
+    setPageNum(pageNum + 1);
+  };
   const [title, setTitle] = useState(lessons[0].label);
 
   const navigation = useNavigate();
@@ -89,7 +89,7 @@ const Lessons = ({ t }, props) => {
                       }
                       onClick={() => {
                         setTitle(item.label);
-                        setLessonPath(subject_path + item.paths[0]);
+                        setLessonPath(subject_path + item.paths[pageNum]);
                       }}
                     >
                       <div> 0{index + 1}</div>
@@ -122,7 +122,9 @@ const Lessons = ({ t }, props) => {
               <p> {t("lessons3")}</p>
             </div>
             <div className="next-back-ls">
-              <button className="next-ls">next</button>
+              <button className="next-ls" onClick={handelPage}>
+                next
+              </button>
               <button className="back-ls">back</button>
             </div>
           </div>

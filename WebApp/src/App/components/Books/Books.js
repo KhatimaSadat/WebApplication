@@ -25,7 +25,6 @@ const Books = ({ t }, props) => {
   const subjects = locationData.subjects;
   console.log(subjects);
   const grade_path = locationData.grade_path;
-
   const navigate = useNavigate();
   const leftScroll = () => {
     const slider = document.getElementById("ul");

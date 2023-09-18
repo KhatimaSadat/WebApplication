@@ -9,8 +9,9 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    flex: 1;
+    /* flex: 1; */
     width: 98%;
+    height: 100%;
 }
 .full_book  #Books .top{
     display: flex;
@@ -19,9 +20,9 @@
     justify-content: space-between;
     font-family: "Bahij helvetica";
     color: #3C98BD;
-    /* background-color: aqua; */
     width: 90%;
-    flex: 1;
+    /* flex: 1; */
+    height: 30%;
 }
 .full_book #Books .top .first-svgs{
     display: flex;
@@ -29,7 +30,6 @@
     justify-content: space-between;
     align-items: center;
     flex: 15%;
-    /* background-color: brown; */
 }
 .full_book #Books .top .first-section{
     flex: 70%;
@@ -59,7 +59,8 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    flex: 1;
+    /* flex: 1; */
+    height: 40%;
 }
 .titles {
     display: flex;
@@ -119,7 +120,8 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    flex: 1;
+    /* flex: 1; */
+    height: 30%;
     width: 90%;
 }
 .full_book #Books .bottom .p-section p{
@@ -226,6 +228,25 @@
     flex: 3;
     overflow-x: scroll;
     }
+        .full_book #Books .middlebook #ul #link {
+            margin: 10px;
+            background-image: linear-gradient(#0F53A1, #3C98BD);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 5%;
+            flex: 1;
+            height: 230px;
+    
+            /* height: 270px; */
+            border-radius: 30px;
+        }
+                .full_book #Books .middlebook #ul #link img {
+                    height: 100px;
+                    width: 100px;
+                    border-bottom: 2px solid lightgray;
+                }
     .full_book .MBooks .middlebook #ul a{
     margin: 2%;
     background-image: linear-gradient(#0F53A1, #3C98BD);
@@ -327,4 +348,52 @@
      text-align: center;
 }
 
+}
+@media screen and (max-width: 438px) {
+.full_book .MBooks .TopB .topp h1 {
+    font-size: 24px;
+        
+}
+.full_book .MBooks .ButtomB .p{
+    font-size: 24px;
+}
+.full_book .MBooks .TopB .topp p {
+  font-size: 24px;
+}
+}
+@media screen and (max-width: 367px) {
+    .full_book .MBooks .TopB .topp h1 {
+        font-size: 18px;
+        
+    }
+.full_book .MBooks .ButtomB .p {
+    font-size: 18px;
+}
+        .full_book .MBooks .TopB .topp p {
+      
+        font-size: 18px;
+    }
+}
+@media screen and (max-width: 298px) {
+    .full_book .MBooks .TopB .topp h1 {
+        font-size: 14px;
+
+    }
+.full_book .MBooks .ButtomB .p {
+    font-size: 14px;
+}
+        .full_book .MBooks .TopB .topp p {
+
+        font-size: 14px;
+    }
+}
+@media screen and (max-height: 342px) and (max-width: 768px) {
+.full_book {      
+        height: 342px;
+    }
+}
+@media screen and (max-height: 520px) {
+    .full_book {
+        height: 600px;
+    }
 }
