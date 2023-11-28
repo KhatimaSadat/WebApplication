@@ -37,13 +37,34 @@ const Lessons = ({ t }, props) => {
     aTag.click();
     aTag.remove();
   };
+  const [FirstColor, setFirstColor] = useState("#3c98bd");
+  const [secondColor, setsecondColor] = useState("#0f53a1");
+  const [nextBtn, setNextbtn] = useState({
+    FirstColor: "#3c98bd",
+    secondColor: "#0f53a1",
+  });
+  const [backBtn, setBackbtn] = useState({
+    FirstColor: "#3c98bd",
+    secondColor: "#0f53a1",
+  });
+
   const [pageNum, setPageNum] = useState(0);
   const subject_path = locationData.subject_path;
-  const [lesson_path, setLessonPath] = useState(
-    subject_path + lessons[0].paths[pageNum]
-  );
+  const [lesson_path, setLessonPath] = useState(lessons[0]);
+  console.log(lesson_path);
   const handelPage = () => {
-    setPageNum(pageNum + 1);
+    if (pageNum == lesson_path.paths.length - 1) {
+      setPageNum(pageNum);
+    } else {
+      setPageNum(pageNum + 1);
+    }
+  };
+  const handlePageBack = () => {
+    if (pageNum == 0) {
+      setPageNum(pageNum);
+    } else {
+      setPageNum(pageNum - 1);
+    }
   };
   const [title, setTitle] = useState(lessons[0].label);
 
@@ -89,7 +110,7 @@ const Lessons = ({ t }, props) => {
                       }
                       onClick={() => {
                         setTitle(item.label);
-                        setLessonPath(subject_path + item.paths[pageNum]);
+                        setLessonPath(item);
                       }}
                     >
                       <div> 0{index + 1}</div>
@@ -113,7 +134,7 @@ const Lessons = ({ t }, props) => {
           </div>
           <div className="bottom">
             <div className="img">
-              <img src={lesson_path}></img>
+              <img src={subject_path + lesson_path.paths[pageNum]}></img>
             </div>
           </div>
           <div className="midlle">
@@ -122,10 +143,38 @@ const Lessons = ({ t }, props) => {
               <p> {t("lessons3")}</p>
             </div>
             <div className="next-back-ls">
-              <button className="next-ls" onClick={handelPage}>
+              <button
+                className="next-ls"
+                onClick={handelPage}
+                style={
+                  pageNum == lesson_path.paths.length - 1
+                    ? {
+                        backgroundImage: `linear-gradient(to left , rgb(192,192,192), #707070)`,
+                      }
+                    : {
+                        backgroundImage: `linear-gradient(to left , ${backBtn.FirstColor},
+    ${backBtn.secondColor})`,
+                      }
+                }
+              >
                 next
               </button>
-              <button className="back-ls">back</button>
+              <button
+                onClick={handlePageBack}
+                className="back-ls"
+                style={
+                  pageNum == 0
+                    ? {
+                        backgroundImage: `linear-gradient(to left , rgb(192,192,192), #707070)`,
+                      }
+                    : {
+                        backgroundImage: `linear-gradient(to left , ${backBtn.FirstColor},
+    ${backBtn.secondColor})`,
+                      }
+                }
+              >
+                back
+              </button>
             </div>
           </div>
         </div>
@@ -152,7 +201,7 @@ const Lessons = ({ t }, props) => {
         </div>
         <div className="mobile-middle">
           <div className="img">
-            <img src={lesson_path}></img>
+            <img src={subject_path + lesson_path.paths[pageNum]} loading=""></img>
           </div>
         </div>
         <div className="mobile-bottom">
@@ -162,8 +211,38 @@ const Lessons = ({ t }, props) => {
             <p className="mobile-bottom-p">دانلود فایل پی دی اف</p>
           </div>
           <div className="next-back-ls">
-            <button className="next-ls">next</button>
-            <button className="back-ls">back</button>
+            <button
+              className="next-ls"
+              onClick={handelPage}
+              style={
+                pageNum == lesson_path.paths.length - 1
+                  ? {
+                      backgroundImage: `linear-gradient(to left , rgb(192,192,192), #707070)`,
+                    }
+                  : {
+                      backgroundImage: `linear-gradient(to left , ${backBtn.FirstColor},
+    ${backBtn.secondColor})`,
+                    }
+              }
+            >
+              next
+            </button>
+            <button
+              onClick={handlePageBack}
+              className="back-ls"
+              style={
+                pageNum == 0
+                  ? {
+                      backgroundImage: `linear-gradient(to left , rgb(192,192,192), #707070)`,
+                    }
+                  : {
+                      backgroundImage: `linear-gradient(to left , ${backBtn.FirstColor},
+    ${backBtn.secondColor})`,
+                    }
+              }
+            >
+              back
+            </button>
           </div>
         </div>
         <div
@@ -193,7 +272,7 @@ const Lessons = ({ t }, props) => {
                       }
                       onClick={() => {
                         setTitle(item.label);
-                        setLessonPath(subject_path + item.paths[0]);
+                        setLessonPath(item);
                       }}
                     >
                       <div> 0{index + 1}</div>

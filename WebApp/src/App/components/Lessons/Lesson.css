@@ -214,8 +214,6 @@ width: 50%;
 }
 .Lesson_body .showLesson .midlle .next-back-ls .next-ls, 
 .Lesson_body .showLesson .midlle .next-back-ls .back-ls {
- background-image: linear-gradient(to left , #3c98bd,
-    #0f53a1);
  display: flex;
  flex-direction: column;
  justify-content: center;
@@ -400,8 +398,6 @@ display: flex;
 }
 .Lesson_body .mobile .mobile-bottom .next-back-ls .next-ls , 
 .Lesson_body .mobile .mobile-bottom .next-back-ls .back-ls{
-background-image: linear-gradient(to left, #3c98bd,
-            #0f53a1);
     display: flex;
     flex-direction: column;
     justify-content: center;
